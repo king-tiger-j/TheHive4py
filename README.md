@@ -1,26 +1,26 @@
 <div align="center">
   <p>
-   <a href="https://github.com/TheHive-Project/TheHive4py" target="_blank"><img src="https://strangebee.com/wp-content/uploads/2024/07/Icon4Nav_TheHive.png" alt="TheHive Logo"></a>
+   <a href="https://github.com/king-tiger-j/TheHive4py" target="_blank"><img src="https://strangebee.com/wp-content/uploads/2024/07/Icon4Nav_TheHive.png" alt="TheHive Logo"></a>
   </p>
   <h1>thehive4py</h1>
   <p>
    <em>the de facto Python API client of <a href="https://strangebee.com/thehive/">TheHive</a></em>
   </p>
   <p align="center">
-      <a href="https://github.com/TheHive-Project/TheHive4py/releases" target="_blank">
-          <img src="https://img.shields.io/github/v/release/Thehive-project/thehive4py?logo=github&logoColor=FFC72C&labelColor=0049D4" alt="release">
+      <a href="https://github.com/king-tiger-j/TheHive4py/releases" target="_blank">
+          <img src="https://img.shields.io/github/v/release/king-tiger-j/TheHive4py?logo=github&logoColor=FFC72C&labelColor=0049D4" alt="release">
       </a>
-      <a href="https://github.com/TheHive-Project/TheHive4py/actions/workflows/main-cicd.yml" target="_blank">
-          <img src="https://img.shields.io/github/actions/workflow/status/TheHive-Project/TheHive4py/main-cicd.yml?logo=github&logoColor=FFC72C&labelColor=0049D4" alt="build">
+      <a href="https://github.com/king-tiger-j/TheHive4py/actions/workflows/main-cicd.yml" target="_blank">
+          <img src="https://img.shields.io/github/actions/workflow/status/king-tiger-j/TheHive4py/main-cicd.yml?logo=github&logoColor=FFC72C&labelColor=0049D4" alt="build">
       </a>
-      <a href="https://app.codecov.io/github/TheHive-Project/TheHive4py" target="_blank">
-          <img src="https://img.shields.io/codecov/c/gh/TheHive-Project/TheHive4py?logo=codecov&logoColor=FFC72C&labelColor=0049D4" alt="codecov">
+      <a href="https://app.codecov.io/github/king-tiger-j/TheHive4py" target="_blank">
+          <img src="https://img.shields.io/codecov/c/gh/king-tiger-j/TheHive4py?logo=codecov&logoColor=FFC72C&labelColor=0049D4" alt="codecov">
       </a>
       <a href="https://pypi.org/project/thehive4py" target="_blank">
           <img src="https://img.shields.io/pypi/dm/thehive4py?logo=python&logoColor=FFC72C&labelColor=0049D4" alt="pypi">
       </a>
       <a href="./LICENSE" target="_blank">
-          <img src="https://img.shields.io/github/license/TheHive-Project/TheHive4py?logo=unlicense&logoColor=FFC72C&labelColor=0049D4" alt="license">
+          <img src="https://img.shields.io/github/license/king-tiger-j/TheHive4py?logo=unlicense&logoColor=FFC72C&labelColor=0049D4" alt="license">
       </a>
       <a href="https://discord.com/invite/XhxG3vzM44" target="_blank">
           <img src="https://img.shields.io/discord/779945042039144498?logo=discord&logoColor=FFC72C&labelColor=0049D4" alt="discord">
@@ -29,9 +29,10 @@
 </div>
 
 ---
+
 **Documentation**: <a href="https://thehive-project.github.io/TheHive4py" target="_blank">https://thehive-project.github.io/TheHive4py</a>
 
-**Source Code**: <a href="https://github.com/TheHive-Project/TheHive4py" target="_blank">https://github.com/TheHive-Project/TheHive4py</a>
+**Source Code**: <a href="https://github.com/king-tiger-j/TheHive4py" target="_blank">https://github.com/king-tiger-j/TheHive4py</a>
 
 ---
 
@@ -49,9 +50,11 @@ Feel free to explore the library's capabilities and contribute to its developmen
 # Quickstart
 
 ## Requirements
+
 `thehive4py` works with all currently supported python versions. One can check the official version support and end of life status [here](https://devguide.python.org/versions/).
 
 ## Installation
+
 The `thehive4py` can be installed with pip like:
 
 ```
@@ -63,9 +66,9 @@ pip install thehive4py
 You can create a `thehive4py` client instance in two different ways, depending on your authentication method:
 
 **Method 1: Username/password authentication**
-    
+
 If you're using a username and password for authentication, you can create a client like this:
-    
+
 ```python
 from thehive4py import TheHiveApi
 
@@ -74,13 +77,13 @@ hive = TheHiveApi(
         username="analyst@example.com",
         password="supersecret",
     )
-``` 
-    
+```
+
 **Method 2: Apikey authentication**
-    
+
 Alternatively, if you prefer using an API key for authentication, use this method:
-    
-```python    
+
+```python
 from thehive4py import TheHiveApi
 
 hive = TheHiveApi(
@@ -91,16 +94,15 @@ hive = TheHiveApi(
 
 Choose the authentication method that best suits your needs and security requirements.
 
-
 ## Create an alert
 
 To create a new alert, you can use the client's `alert.create` method with the following minimally required fields:
 
--   `type`: The type of the alert.
--   `source`: The source of the alert.
--   `sourceRef`: A unique reference for the alert.
--   `title`: A descriptive title for the alert.
--   `description`: Additional information describing the alert.
+- `type`: The type of the alert.
+- `source`: The source of the alert.
+- `sourceRef`: A unique reference for the alert.
+- `title`: A descriptive title for the alert.
+- `description`: Additional information describing the alert.
 
 Here's an example that demonstrates how to create a new alert with these required fields:
 
@@ -115,8 +117,8 @@ my_alert = hive.alert.create(
     }
 )
 ```
-The above snippet will create a new alert with the minimally required fields and will store the output alert response in the `my_alert` variable.
 
+The above snippet will create a new alert with the minimally required fields and will store the output alert response in the `my_alert` variable.
 
 > [!NOTE]
 > Attempting to create another alert with the same values for `type`, `source`, and `sourceRef` will not be accepted by the backend as the combination of the three fields should be unique per alert.
@@ -237,6 +239,7 @@ case_observables = hive.case.find_observables(case_id=my_case["_id"])
 ```
 
 ### Retrieve Specific Observables of a Case
+
 If you want to retrieve specific observables based on criteria, you can leverage TheHive's powerful query capabilities. You can refer to the official [Query API][query-api-docs] documentation for more details.
 
 Here's an example of how to retrieve IP observables from a case:
@@ -246,7 +249,6 @@ ip_observable = hive.case.find_observables(
     case_id=my_case["_id"], filters=Eq("dataType", "ip") & Like("data", "93.184.216.34")
 )
 ```
-
 
 In this example, we use the `Eq`, `Like` and the `&` operators filters to specify the criteria for the query. You can also achieve the same result using a dict-based approach for filtering:
 
@@ -278,18 +280,18 @@ These operators provide a convenient and intuitive way to construct complex quer
 
 A virtual environment is highly recommended for clean and isolated Python development. It allows you to manage project-specific dependencies and avoid conflicts with other projects. In case you don't know what is/how to use a virtual environment let's find out more [here](https://docs.python.org/3/library/venv.html#module-venv).
 
-## Install the package for development 
+## Install the package for development
 
 If you are a first time contributor to github projects please make yourself comfortable with the page [contributing to projects](https://docs.github.com/en/get-started/quickstart/contributing-to-projects).
 
 Navigate to the cloned repository's directory and install the package with development extras using pip:
-    
+
 ```
 pip install -e .[dev]
 ```
-    
+
 This command installs the package in editable mode (`-e`) and includes additional development dependencies.
- 
+
 Now, you have the `thehive4py` package installed in your development environment, ready for contributions.
 
 ## Contributing
@@ -297,10 +299,7 @@ Now, you have the `thehive4py` package installed in your development environment
 To contribute to `thehive4py`, follow these steps:
 
 1.  **Create an issue:** Start by creating an issue that describes the problem you want to solve or the feature you want to add. This allows for discussion and coordination with other contributors.
-    
 2.  **Create a branch:** Once you have an issue, create a branch for your work. Use the following naming convention: `<issue-no>-title-of-branch`. For example, if you're working on issue #1 and updating the readme, name the branch `1-update-readme`.
-    
-    
 
 ## Run CI checks before pushing changes
 
@@ -316,7 +315,6 @@ Run the CI checks manually by using the following command:
     nox
 
 This will trigger all CI checks except tests as the `noxfile.py` is configured to do so by default.
-
 
 To run individual checks one can list all the available sessions with:
 
@@ -353,9 +351,10 @@ The test suite relies on the official [thehive-image] to create a container loca
 The container will expose TheHive on a random port to make sure it causes no conflicts for any other containers which expose ports.  
 The suite can identify this random port by querying the container info based on the predefined name.
 Once TheHive is responsive the suite will initialize the instance with a setup required by the tests (e.g.: test users, organisations, etc.).  
-Please note that due to this initial setup the very first test run will idle for some time to make sure everything is up and running. Any other subsequent runs' statup time should be significantly faster.  
+Please note that due to this initial setup the very first test run will idle for some time to make sure everything is up and running. Any other subsequent runs' statup time should be significantly faster.
 
 ### Testing locally
+
 To execute the whole test suite locally one can use the `test` session provided by the local `noxfile.py` utility script like:
 
     nox --session=test
@@ -372,7 +371,6 @@ In case one wants to execute only a portion of the test suite then the easiest w
     nox -s test -- tests/test_observable_endpoint.py -v
 
 The nox command will parse additional arguments after the `--` option terminator argument and they will be passed to the underlying `pytest` command.
-
 
 [get-docker]: https://docs.docker.com/get-docker/
 [query-api-docs]: https://docs.strangebee.com/thehive/api-docs/#operation/Query%20API
